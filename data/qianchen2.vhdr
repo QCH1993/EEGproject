@@ -1,0 +1,55 @@
+Brain Vision Data Exchange Header File Version 1.0
+
+[Common Infos]
+Codepage=UTF-8
+DataFile=qianchen2.eeg
+MarkerFile=qianchen2.vmrk
+DataFormat=BINARY
+DataOrientation=MULTIPLEXED
+DataType=TIMEDOMAIN
+NumberOfChannels=37
+DataPoints=159232
+SamplingInterval=2000
+
+[Binary Infos]
+BinaryFormat=IEEE_FLOAT_32
+UseBigEndianOrder=NO
+
+[Channel Infos]
+ch1=AF7,,1000000,uV
+ch2=Fp1,,1000000,uV
+ch3=Fpz,,1000000,uV
+ch4=Fp2,,1000000,uV
+ch5=AF8,,1000000,uV
+ch6=AF3,,1000000,uV
+ch7=AF4,,1000000,uV
+ch8=F5,,1000000,uV
+ch9=F3,,1000000,uV
+ch10=Fz,,1000000,uV
+ch11=F4,,1000000,uV
+ch12=F6,,1000000,uV
+ch13=C5,,1000000,uV
+ch14=C3,,1000000,uV
+ch15=C1,,1000000,uV
+ch16=Cz,,1000000,uV
+ch17=C2,,1000000,uV
+ch18=C4,,1000000,uV
+ch19=C6,,1000000,uV
+ch20=CP5,,1000000,uV
+ch21=CPz,,1000000,uV
+ch22=CP6,,1000000,uV
+ch23=P3,,1000000,uV
+ch24=Pz,,1000000,uV
+ch25=P4,,1000000,uV
+ch26=P7,,1000000,uV
+ch27=PO3,,1000000,uV
+ch28=PO4,,1000000,uV
+ch29=P8,,1000000,uV
+ch30=O1,,1000000,uV
+ch31=Oz,,1000000,uV
+ch32=O2,,1000000,uV
+ch33=ACC0,,1000000,uV
+ch34=ACC1,,1000000,uV
+ch35=ACC2,,1000000,uV
+ch36=Packet Counter,,1000000,uV
+ch37=TRIGGER,,1000000,uV

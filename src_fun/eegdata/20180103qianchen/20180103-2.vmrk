@@ -1,0 +1,15 @@
+Brain Vision Data Exchange Marker File, Version 1.0
+[Common Infos]
+Codepage=UTF-8
+DataFile=20180103-2.eeg
+
+[Marker Infos]
+Mk1=Stimulus,1536,1,0,
+Mk2=Stimulus,256,14719,0,
+Mk3=Stimulus,512,45161,0,
+Mk4=Stimulus,768,52492,0,
+Mk5=Stimulus,1024,90963,0,
+Mk6=Stimulus,1280,100065,0,
+Mk7=Stimulus,1536,220499,0,
+Mk8=Stimulus,1792,228630,0,
+Mk9=Stimulus,2048,259197,0,

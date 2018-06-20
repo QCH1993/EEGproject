@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>712</width>
+    <height>488</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="DataInfo" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="datainfo_label">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Data_information:&lt;/p&gt;&lt;p&gt;Name:&lt;/p&gt;&lt;p&gt;Datapoints:&lt;/p&gt;&lt;p&gt;Sampling rate:&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="MatplotlibWidget" name="Overview" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(170, 170, 255, 50);</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>712</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuImport_EEG_data">
+     <property name="title">
+      <string>Import EEG data</string>
+     </property>
+     <addaction name="actionFrom_vhdr_file"/>
+    </widget>
+    <widget class="QMenu" name="menuImport_sensor_location">
+     <property name="title">
+      <string>Import sensor location</string>
+     </property>
+     <addaction name="actionFrom_ced_file"/>
+    </widget>
+    <widget class="QMenu" name="menuSave_data">
+     <property name="title">
+      <string>Save data</string>
+     </property>
+     <addaction name="actionAs_csv_file"/>
+    </widget>
+    <addaction name="menuImport_EEG_data"/>
+    <addaction name="menuImport_sensor_location"/>
+    <addaction name="menuSave_data"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionData_info"/>
+    <addaction name="actionAbout_this_data"/>
+    <addaction name="actionData_edit"/>
+    <addaction name="actionSensor_edit"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionPre_Filter"/>
+    <addaction name="actionFilter_different_bands"/>
+    <addaction name="actionNormalization"/>
+    <addaction name="actionFeature_extraction"/>
+   </widget>
+   <widget class="QMenu" name="menuPlot">
+    <property name="title">
+     <string>Visualization</string>
+    </property>
+    <widget class="QMenu" name="menuDifferent_freqency_bands">
+     <property name="title">
+      <string>Different freqency bands waves</string>
+     </property>
+     <addaction name="actionAll_after_pre_filter"/>
+     <addaction name="actionTheta_4_7Hz"/>
+     <addaction name="actionAlpha_8_13Hz"/>
+     <addaction name="actionBeta_14_30Hz"/>
+     <addaction name="actionGamma_32_64Hz"/>
+    </widget>
+    <widget class="QMenu" name="menuSensor_location">
+     <property name="title">
+      <string>Sensor location</string>
+     </property>
+     <addaction name="action2_D"/>
+     <addaction name="action3_D"/>
+    </widget>
+    <widget class="QMenu" name="menuDifferent_frequency_bands_brainhot">
+     <property name="title">
+      <string>Different frequency bands brainhot</string>
+     </property>
+     <addaction name="actionStatic_fig_2"/>
+     <addaction name="actionDynamic_fig_2"/>
+    </widget>
+    <addaction name="menuSensor_location"/>
+    <addaction name="actionRaw_data_seperatly"/>
+    <addaction name="menuDifferent_freqency_bands"/>
+    <addaction name="menuDifferent_frequency_bands_brainhot"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout_this_app"/>
+    <addaction name="actionFunction_summary"/>
+    <addaction name="actionStandard_usage_steps"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuPlot"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionExit"/>
+  </widget>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="pic/icon/icon.qrc">
+     <normaloff>:/myicon/exit.ico</normaloff>:/myicon/exit.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Q</string>
+   </property>
+  </action>
+  <action name="actionFrom_vhdr_file">
+   <property name="text">
+    <string>From .vhdr file</string>
+   </property>
+  </action>
+  <action name="actionFrom_ced_file">
+   <property name="text">
+    <string>From .ced file</string>
+   </property>
+  </action>
+  <action name="actionAs_csv_file">
+   <property name="text">
+    <string>as .csv file</string>
+   </property>
+  </action>
+  <action name="actionData_info">
+   <property name="text">
+    <string>Data info</string>
+   </property>
+  </action>
+  <action name="actionAbout_this_data">
+   <property name="text">
+    <string>About this data</string>
+   </property>
+  </action>
+  <action name="actionRaw_data_seperatly">
+   <property name="text">
+    <string>Raw data</string>
+   </property>
+  </action>
+  <action name="actionTheta_4_7Hz">
+   <property name="text">
+    <string>Theta (4-7Hz)</string>
+   </property>
+  </action>
+  <action name="actionAlpha_8_13Hz">
+   <property name="text">
+    <string>Alpha(8-13Hz)</string>
+   </property>
+  </action>
+  <action name="actionBeta_14_30Hz">
+   <property name="text">
+    <string>Beta(14-30Hz)</string>
+   </property>
+  </action>
+  <action name="actionGamma_32_64Hz">
+   <property name="text">
+    <string>Gamma(32-64Hz)</string>
+   </property>
+  </action>
+  <action name="actionData_edit">
+   <property name="text">
+    <string>Data edit</string>
+   </property>
+  </action>
+  <action name="actionSensor_edit">
+   <property name="text">
+    <string>Sensor edit</string>
+   </property>
+  </action>
+  <action name="actionPre_Filter">
+   <property name="text">
+    <string>Pre-Filter</string>
+   </property>
+  </action>
+  <action name="actionFilter_different_bands">
+   <property name="text">
+    <string>Filter different bands</string>
+   </property>
+  </action>
+  <action name="actionNormalization">
+   <property name="text">
+    <string>Normalization</string>
+   </property>
+  </action>
+  <action name="actionFeature_extraction">
+   <property name="text">
+    <string>Feature extraction</string>
+   </property>
+  </action>
+  <action name="actionAbout_this_app">
+   <property name="text">
+    <string>About this app</string>
+   </property>
+  </action>
+  <action name="actionFunction_summary">
+   <property name="text">
+    <string>Function summary</string>
+   </property>
+  </action>
+  <action name="actionStandard_usage_steps">
+   <property name="text">
+    <string>Standard usage steps</string>
+   </property>
+  </action>
+  <action name="action2_D">
+   <property name="text">
+    <string>2-D</string>
+   </property>
+  </action>
+  <action name="action3_D">
+   <property name="text">
+    <string>3-D</string>
+   </property>
+  </action>
+  <action name="actionAll_after_pre_filter">
+   <property name="text">
+    <string>All(after pre-filter)</string>
+   </property>
+  </action>
+  <action name="actionTheta_4_7Hz_2">
+   <property name="text">
+    <string>Theta(4-7Hz)</string>
+   </property>
+  </action>
+  <action name="actionAll_after_pre_filter_3">
+   <property name="text">
+    <string>All(after pre-filter)</string>
+   </property>
+  </action>
+  <action name="actionTheta_4_7Hz_3">
+   <property name="text">
+    <string>Theta(4-7Hz)</string>
+   </property>
+  </action>
+  <action name="actionStatic_fig">
+   <property name="text">
+    <string>Static fig</string>
+   </property>
+  </action>
+  <action name="actionDynamic_fig">
+   <property name="text">
+    <string>Dynamic fig</string>
+   </property>
+  </action>
+  <action name="actionStatic_fig_2">
+   <property name="text">
+    <string>Static fig</string>
+   </property>
+  </action>
+  <action name="actionDynamic_fig_2">
+   <property name="text">
+    <string>Dynamic fig</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MatplotlibWidget</class>
+   <extends>QWidget</extends>
+   <header>MatplotlibWidget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="pic/icon/icon.qrc"/>
+  <include location="pic/img/img.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFrom_vhdr_file</sender>
+   <signal>triggered()</signal>
+   <receiver>datainfo_label</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>108</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

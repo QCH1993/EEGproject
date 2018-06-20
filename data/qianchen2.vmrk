@@ -1,0 +1,13 @@
+Brain Vision Data Exchange Marker File, Version 1.0
+[Common Infos]
+Codepage=UTF-8
+DataFile=qianchen2.eeg
+
+[Marker Infos]
+Mk1=Stimulus,2304,1,0,
+Mk2=Stimulus,256,39979,0,
+Mk3=Stimulus,512,53352,0,
+Mk4=Stimulus,768,60329,0,
+Mk5=Stimulus,1024,72443,0,
+Mk6=Stimulus,1280,83840,0,
+Mk7=Stimulus,1536,120149,0,
